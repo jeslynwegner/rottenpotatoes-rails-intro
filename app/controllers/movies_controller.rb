@@ -11,6 +11,7 @@ class MoviesController < ApplicationController
   end
 
   def index
+    @all_ratings = Movie.ratings
     @movies = Movie.order(params[:sort_by])
     @sort_column = params[:sort_by]
   end
